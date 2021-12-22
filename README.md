@@ -18,6 +18,8 @@ Specify your wifi credentials and location details at the top of [platformio.ini
 
 ## Demo
 
+### ESP32 
+
 ![esp32](/doc/demo/VID_20211222_144902.gif)
 
 # ThingPulse ESP8266 Weather Station Color
