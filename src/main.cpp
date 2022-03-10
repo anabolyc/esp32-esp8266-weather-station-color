@@ -32,6 +32,7 @@
 #ifdef ESP8266
 #include <ESP8266WiFi.h>
 #endif
+
 #include "SunMoonCalc.h"
 #include <JsonListener.h>
 #include <OpenWeatherMapCurrent.h>
@@ -39,8 +40,15 @@
 #include <Astronomy.h>
 #include <MiniGrafx.h>
 #include <Carousel.h>
-#include <ST7789_SPI.h>
 
+#ifdef DISPLAY_ST7789
+#include <ST7789_SPI.h>
+#define Display ST7789_SPI
+#endif
+#ifdef DISPLAY_ILI9341
+#include <ILI9341_SPI.h>
+#define Display ILI9341_SPI
+#endif
 #include "ArialRounded.h"
 #include "moonphases.h"
 #include "weathericons.h"
@@ -67,7 +75,7 @@ int BITS_PER_PIXEL = 2; // 2^2 =  4 colors
 ADC_MODE(ADC_VCC);
 #endif
 
-ST7789_SPI tft = ST7789_SPI(TFT_CS, TFT_DC, TFT_RST);
+Display tft = Display(TFT_CS, TFT_DC, TFT_RST);
 MiniGrafx gfx = MiniGrafx(&tft, BITS_PER_PIXEL, palette);
 Carousel carousel(&gfx, 0, 0, 240, 100);
 

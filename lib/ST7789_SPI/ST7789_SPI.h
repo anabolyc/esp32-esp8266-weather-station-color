@@ -124,6 +124,14 @@ Many thanks go to various contributors such as Adafruit, Waveshare.
 #define ST77XX_INVSET ST77XX_INVON
 #endif
 
+#ifndef ST7789_TFTWIDTH
+#define ST7789_TFTWIDTH 240
+#endif
+
+#ifndef ST7789_TFTHEIGHT
+#define ST7789_TFTHEIGHT 320
+#endif
+
 class ST7789_SPI : public DisplayDriver
 {
 
