@@ -1,5 +1,8 @@
 #pragma once
 
+const uint8_t ThingPulseLogo_Width = 200;
+const uint8_t ThingPulseLogo_Height = 80;
+
 const char ThingPulseLogo[] PROGMEM = {
   0x01, // Version: 1
   0x02, // BitDepth: 2
