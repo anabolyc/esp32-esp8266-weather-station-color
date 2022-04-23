@@ -1,4 +1,9 @@
+#ifdef ESP8266
 #include <FS.h>
+#endif
+#ifdef ESP32
+#include <SPIFFS.h>
+#endif
 #include <XPT2046_Touchscreen.h>
 
 #ifndef _TOUCH_CONTROLLERWSH_
